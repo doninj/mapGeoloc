@@ -20,6 +20,8 @@ export function LoginPage() {
         event.preventDefault();
         const auth = getAuth(app);
         const signIn = await signInWithEmailAndPassword(auth, login.email, login.password)
+        console.log(signIn)
+        localStorage.setItem('userId', signIn.user.uid)
     }
     function onInputChange(event) {
         const { name } = event.currentTarget
