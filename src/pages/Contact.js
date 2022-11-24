@@ -25,6 +25,9 @@ export function Contact() {
 
     return (
         <div>
+            {contacts.map((contact) => (
+                <p>{JSON.stringify(contact)}</p>
+            ))}
             <button onClick={getContact}>Hack</button>
         </div>
     )

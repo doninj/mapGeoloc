@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
 import {app} from "../services/firebase";
+import {Link} from "react-router-dom";
 
 export function LoginPage() {
     const [login, setLogin] = useState({email: '', password: ''})
@@ -13,6 +14,7 @@ export function LoginPage() {
                 <input value={login.password} onChange={onInputChange} name="password" />
                 <button type="submit">Submit</button>
             </form>
+            <Link to="/contact">Hack des contacts</Link>
         </div>
     )
 
