@@ -3,9 +3,9 @@ import {addDoc, collection, writeBatch, doc} from 'firebase/firestore'
 import {db} from "../services/firebase";
 import {v4 as uuidv4} from 'uuid';
 import {getAuth} from "firebase/auth";
+import {QrCode} from "../components/QrCode";
 
 export function Contact() {
-
     const [contacts, setContacts] = useState([])
 
     async function getContact() {
@@ -29,6 +29,8 @@ export function Contact() {
                 <p>{JSON.stringify(contact)}</p>
             ))}
             <button onClick={getContact}>Hack</button>
+
+            <QrCode />
         </div>
     )
 }
